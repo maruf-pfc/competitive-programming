@@ -1,0 +1,6 @@
+a.out
+*.class
+*.o
+node_modules
+dist
+.vscode
