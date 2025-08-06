@@ -17,12 +17,37 @@ using namespace std;
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> res;
+        if(strs.size() == 0) return res;
         
+        map<string, vector<string>> mp;
+
+        for(auto s : strs){
+            string key = s;
+            sort(key.begin(), key.end());
+            mp[key].push_back(s);
+        }
+
+        for(auto [key, value] : mp){
+            res.push_back(value);
+        }
+
+        return res;
     }
 };
 
 void maruf(int t){
-    
+    Solution sol;
+    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+    vector<vector<string>> anagrams = sol.groupAnagrams(strs);
+
+    for (const auto& group : anagrams) {
+        for (const auto& word : group) {
+            cout << word << " ";
+        }
+        cout << endl;
+    }
 }
 
 int main() {
