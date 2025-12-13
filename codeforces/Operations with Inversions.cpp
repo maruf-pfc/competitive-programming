@@ -1,7 +1,7 @@
 // In the name of Allah, Most Merciful
 // Written by: Md. Maruf Sarker
-// Problem Link: https://codeforces.com/contest/2173/problem/B
-// Date: 2025-12-05
+// Problem Link: https://codeforces.com/contest/2176/problem/A
+// Date: 2025-12-11
 
 #include <bits/stdc++.h>
 // #include <debug.h>
@@ -20,27 +20,23 @@ public:
 };
 
 void maruf(int t){
-    ll n;
+    int n;
     cin >> n;
-    vector<ll> a(n), b(n);
-    for(auto &i : a) cin >> i;
-    for(auto &i : b) cin >> i;
 
-    ll mx, mn;
-    mx = mn = 0;
+    vector<int> a(n);
+    for(auto &i: a) cin >> i;
 
-    for(ll i = 0; i < n; i++){
-        ll redP = mx - a[i];
-        ll redN = mn - a[i];
+    int cnt, mx;
+    cnt = mx = 0;
 
-        ll blueP = b[i] - mx;
-        ll blueN = b[i] - mn;
-
-        mx = max({redP, redN, blueP, blueN});
-        mn = min({redP, redN, blueP, blueN});
+    for(auto i : a){
+        if(i >= mx){
+            mx = i;
+            cnt++;
+        }
     }
 
-    cout << mx << endl;
+    cout << (n - cnt) << endl;
 }
 
 int main() {
