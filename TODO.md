@@ -7,4 +7,20 @@
 - https://codeforces.com/contest/2175/problem/A
 - https://codeforces.com/contest/1348/problem/A
 - https://codeforces.com/contest/2156/problem/A
+- https://codeforces.com/contest/1954/problem/A
+- https://codeforces.com/contest/1348/problem/A
+- https://codeforces.com/contest/2175/problem/A
+- https://codeforces.com/contest/2176/problem/A
+- https://codeforces.com/contest/50/problem/A
+- https://codeforces.com/contest/14/problem/A
+- https://codeforces.com/contest/41/problem/A
+- https://codeforces.com/contest/32/problem/B
+- https://codeforces.com/contest/2133/problem/A
+- https://codeforces.com/contest/16/problem/A
+- https://codeforces.com/contest/2132/problem/A
+- https://codeforces.com/contest/2116/problem/A
+- https://codeforces.com/contest/1234/problem/A
+- https://codeforces.com/contest/2163/problem/A
+- https://codeforces.com/contest/2167/problem/C
+- https://codeforces.com/contest/131/problem/A
 - 
