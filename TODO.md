@@ -22,3 +22,10 @@
 - https://codeforces.com/contest/1234/problem/A
 - https://codeforces.com/contest/2163/problem/A
 - https://codeforces.com/contest/2167/problem/C
+- https://codeforces.com/contest/2155/problem/A
+- https://codeforces.com/contest/2146/problem/A
+- https://codeforces.com/contest/38/problem/A
+- https://codeforces.com/contest/2172/problem/A
+- https://codeforces.com/contest/2095/problem/D
+- https://codeforces.com/contest/131/problem/A
+- 
