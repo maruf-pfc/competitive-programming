@@ -4,3 +4,62 @@ a.out
 node_modules
 dist
 .vscode
+############################
+# Build results
+############################
+bin/
+obj/
+out/
+
+############################
+# .NET Core / SDK
+############################
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+############################
+# Visual Studio
+############################
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+############################
+# Visual Studio Code
+############################
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+############################
+# Rider / JetBrains
+############################
+.idea/
+*.sln.iml
+
+############################
+# OS generated files
+############################
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+############################
+# Logs & temp
+############################
+*.log
+*.tmp
+*.bak
+*.cache
+
+############################
+# Competitive programming
+############################
+input.txt
+output.txt
+test.txt
