@@ -23,19 +23,18 @@ void maruf(int t){
     int n;
     cin >> n;
 
-    int x;
-    vector<int> freq(n * n + 1, 0);
+    unordered_map<int, int> mp;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            cin >> x;
-            freq[x]++;
+            int x; cin >> x;
+            mp[x]++;
         }
     }
 
     bool exits = false;
     
-    for(int i = 0; i < n * n; i++){
-        if(freq[i] > n * (n - 1)){
+    for(auto x : mp){
+        if(x.second > n * (n - 1)){
             exits = true;
         }
     }

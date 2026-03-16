@@ -1,6 +1,6 @@
 // In the name of Allah, Most Merciful
 // Written by: Md. Maruf Sarker
-// Problem Link: https://codeforces.com/contest/2200/problem/A
+// Problem Link: https://leetcode.com/contest/weekly-contest-493/problems/count-commas-in-range/description/
 // Date: 2026-03-16
 
 #include <bits/stdc++.h>
@@ -16,24 +16,24 @@ using namespace std;
 
 class Solution {
 public:
-    
+    int countCommas(int n) {
+        long long ans = 0;
+
+        if(n >= 1000) ans += n - 999;
+        if(n >= 1000000) ans += n - 999999;
+        if(n >= 1000000000) ans += n - 999999999;
+
+        return ans;
+    }
 };
 
 void maruf(int t){
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (auto &i: a) cin >> i;
     
-    int mx = 0, ans = 0;
-    for (int i : a) mx = max(i, mx);
-    for (int i : a) ans += i == mx;
-    cout << ans << '\n';
 }
 
 int main() {
     Maruf
     int t = 1;
-    cin >> t;
+    // cin >> t;
     for(int i = 1; i <= t; i++) maruf(i);
 }
