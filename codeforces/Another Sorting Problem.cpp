@@ -38,13 +38,38 @@ public:
 -> pos of invalid idx are 2 3 6
 8,9,9,10,10,11,11 
 
-
+7
+8 3 9 4 10 5 11
+i = 0 -> skip
+i = 1 -> 3 < 8 -> k = 5
+i = 2 -> 9 < 3 false
+i = 3 -> 4 < 9 -> k = max(5, 5) -> k = 5
+i = 4 -> 10 < 4 -> false
+i = 5 -> 5 < 10 -> k = max(5, 5) -> k = 5
+i = 6 -> 11 < 5 false
+ans = 8 8 9 9 10 10 11
 */
 
 void maruf(int t){
-    int n; cin >> n;
+    ll n; cin >> n;
+    ll k = 0;
     vector<ll> v(n);
-    for(auto &i : v) cin >> i;
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+
+        if(i and v[i] < v[i - 1]){
+            k = max(k, v[i - 1] - v[i]);
+        }
+    }
+
+    for(int i = 1; i < n; i++){
+        if(v[i] < v[i - 1]){
+            v[i] += k;
+        }
+    }
+
+    if(is_sorted(v.begin(), v.end())) cout << "YES" << endl;
+    else cout << "NO" << endl;
 
     // vector<int> invalid;
     // bool ok = true;

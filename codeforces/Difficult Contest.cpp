@@ -1,6 +1,6 @@
 // In the name of Allah, Most Merciful
 // Written by: Md. Maruf Sarker
-// Problem Link: https://codeforces.com/contest/2183/problem/A
+// Problem Link: https://codeforces.com/problemset/problem/2125/A
 // Date: 2026-05-25
 
 #include <bits/stdc++.h>
@@ -78,10 +78,28 @@ public:
 };
 
 void maruf(int t){
-    int n; cin >> n;
-    vi v(n);
-    for(auto &i : v) cin >> i;
-    cout << (v[0] == 0 and v[n - 1] == 0 ? "Bob" : "Alice") << endl;
+    string s;
+    cin >> s;
+
+    // sort(s.begin(), s.end());
+    // reverse(s.begin(), s.end());
+    
+    // cut all T to the beginning
+    int cnt = 0;
+    for(auto c : s) {
+        if(c == 'T') {
+            cnt++;
+        }
+    }
+
+    string ans(cnt, 'T');
+    for(auto c : s){
+        if(c != 'T'){
+            ans += c;
+        }
+    }
+
+    cout << ans << endl;
 }
 
 int main() {

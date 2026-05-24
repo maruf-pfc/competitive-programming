@@ -1,6 +1,6 @@
 // In the name of Allah, Most Merciful
 // Written by: Md. Maruf Sarker
-// Problem Link: https://codeforces.com/contest/2183/problem/A
+// Problem Link: https://codeforces.com/contest/2130/problem/A
 // Date: 2026-05-25
 
 #include <bits/stdc++.h>
@@ -59,11 +59,11 @@ void maruf(){
     #endif
 }
 bool isPrime(int n){ // TC: O(sqrt(n)), SC: O(1)
-    if(n < 2) return false;
-    if(n <= 3) return true;
-    if(n % 2 == 0 or n % 3 == 0) return false;
-    for(int i = 5; 1LL * i * i <= n; i += 6){
-        if(n % i == 0 or n % (i + 2) == 0) return false;
+    if(n == 1) return false;
+    if(n == 2) return true;
+    if(n % 2 == 0) return false;
+    for(int i = 3; i * i <= n; i += 2){
+        if(n % i == 0) return false;
     }
     return true;
 }
@@ -78,10 +78,19 @@ public:
 };
 
 void maruf(int t){
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vi v(n);
     for(auto &i : v) cin >> i;
-    cout << (v[0] == 0 and v[n - 1] == 0 ? "Bob" : "Alice") << endl;
+
+    ll sum = 0;
+    for(auto i : v) {
+        sum += i;
+        if(i == 0){
+            sum++;
+        }
+    }
+    cout << sum << endl;
 }
 
 int main() {
@@ -90,6 +99,7 @@ int main() {
 
     int t = 1;
     cin >> t;
+    
     for(int i = 1; i <= t; i++) maruf(i);
 
     cerr << "Run Time : " << (((double)(clock() - z)) / CLOCKS_PER_SEC) << endl;

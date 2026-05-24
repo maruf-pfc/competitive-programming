@@ -1,46 +1,38 @@
 // In the name of Allah, Most Merciful
 // Written by: Md. Maruf Sarker
-// Problem Link: https://codeforces.com/contest/2183/problem/A
-// Date: 2026-05-25
+// Problem Link: https://codeforces.com/contest/2229/problem/C2
+// Language: C++
+// Date: 2026-05-23
 
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
 #define endl "\n"
 #define sp " "
-#define vi vector<int>
-#define vll vector<ll>
-#define pii pair<int, int>
-#define pll pair<ll, ll>
-#define vpii vector<pii>
-#define vpll vector<pll>
-#define pb push_back
-#define mp make_pair
-#define ff first
-#define ss second
-#define asort(x) sort(x.begin(), x.end())
-#define dsort(x) sort(x.rbegin(), x.rend())
-#define sz(x) (int)x.size()
-#define mod 1000000007
-#define mem(a, b) memset(a, b, sizeof(a))
-#define gcd(a, b) __gcd(a, b)
-#define lcm(a, b) (a * (b / gcd(a, b)))
-#define dxR = {0, 0, 1, -1}
-#define dyR = {1, -1, 0, 0}
-#define dxQ = {0, 0, 1, -1, 1, 1, -1, -1}
-#define dyQ = {1, -1, 0, 0, 1, -1, 1, -1}
+#define setprecision(x) cout << fixed << setprecision(x)
+const double PI = acos(-1);
+#define MOD 1000000007
+
+// YES/NO - Yes/No - yes/no
 #define YES cout << "YES" << endl
 #define NO cout << "NO" << endl
 #define Yes cout << "Yes" << endl
 #define No cout << "No" << endl
-#define setprecision(x) cout << fixed << setprecision(x)
-#define Maruf ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-const double PI = acos(-1);
-const double eps = 1e-9;
-const int inf = 2000000000;
-const ll infLL = 9000000000000000000;
+#define yes cout << "yes" << endl
+#define no cout << "no" << endl
 
+// Input
+#define input(a) cin >> a
+#define i2(a, b) cin >> a >> b
+#define i3(a, b, c) cin >> a >> b >> c
+#define i4(a, b, c, d) cin >> a >> b >> c >> d
+// Output
+#define print(a) cout << a << endl
+#define p2(a, b) cout << a << sp << b << endl
+#define p3(a, b, c) cout << a << sp << b << sp << c << endl
+#define p4(a, b, c, d) cout << a << sp << b << sp << c << sp << d << endl
+
+// Debugging
 template<typename F,typename S>ostream&operator<<(ostream&os,const pair<F,S>&p){return os<<"("<<p.first<<", "<<p.second<<")";}
 template<typename T>ostream&operator<<(ostream&os,const vector<T>&v){os<<"{";for(auto it=v.begin();it!=v.end();++it){if(it!=v.begin())os<<", ";os<<*it;}return os<<"}";}
 template<typename T>ostream&operator<<(ostream&os,const set<T>&v){os<<"[";for(auto it=v.begin();it!=v.end();++it){if(it!=v.begin())os<<",";os<<*it;}return os<<"]";}
@@ -51,6 +43,24 @@ void mms(){cerr << endl;}
 template<typename T>void mms(T a[],int n){for(int i=0;i<n;++i)cerr<<a[i]<<' ';cerr<<endl;}
 template<typename T,typename...hello>void mms(T arg,const hello&...rest){cerr<<arg<<' ';mms(rest...);}
 
+// Utilities
+#define ff first
+#define ss second
+#define pb push_back
+#define mod 1000000007
+#define ll long long
+#define ull unsigned long long
+#define ld long double
+#define mem(a,b) memset(a, b, sizeof(a))
+#define sqr(a) ((a) * (a))
+#define cube(a) ((a) * (a) * (a))
+#define rev(x) reverse(all(x))
+#define sum(x) accumulate(all(x), 0)
+#define gcd(a, b) __gcd(a, b)
+#define lcm(a, b) (a * (b / gcd(a, b)))
+
+#define Maruf ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
 void maruf(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     #ifndef ONLINE_JUDGE
@@ -58,39 +68,52 @@ void maruf(){
         freopen("output.txt", "w", stdout);
     #endif
 }
-bool isPrime(int n){ // TC: O(sqrt(n)), SC: O(1)
-    if(n < 2) return false;
-    if(n <= 3) return true;
-    if(n % 2 == 0 or n % 3 == 0) return false;
-    for(int i = 5; 1LL * i * i <= n; i += 6){
-        if(n % i == 0 or n % (i + 2) == 0) return false;
-    }
-    return true;
-}
 
 //-----------------------------------------------------------------------//
 /*/TO GET SOMETHING YOU NEVER HAD YOU HAVE TO DO SOMETHING YOU NEVER DID/*/
 //-----------------------------------------------------------------------//
 
-class Solution {
-public:
-    
-};
+/*
+all pos now
+*/
 
-void maruf(int t){
-    int n; cin >> n;
-    vi v(n);
+void solve(){
+    ll n; cin >> n;
+    vector<ll> v(n);
     for(auto &i : v) cin >> i;
-    cout << (v[0] == 0 and v[n - 1] == 0 ? "Bob" : "Alice") << endl;
+
+    vector<ll> res;
+    ll f = 0, curr = 0;
+
+    for(ll i = n - 1; i >= 0; i--){
+        // if(v[i] and v[i] > 0){
+        //     res.pb(i + 1);
+ 
+        //     for(ll j = 0; j <= i; j++){
+        //         v[j] = -v[j];
+        //     }
+        // }
+
+        // if(f & 1) curr = -v[i];
+        if(f) curr = -v[i];
+        else curr = v[i];
+
+        if(curr and curr > 0){
+            res.pb(i + 1);
+            f ^= 1;
+        }
+    }
+
+    cout << res.size() << endl;
+    for(auto i : res) cout << i << sp;
+    cout << endl;
 }
 
 int main() {
-    clock_t z = clock();
     Maruf
-
-    int t = 1;
+    int t;
     cin >> t;
-    for(int i = 1; i <= t; i++) maruf(i);
-
-    cerr << "Run Time : " << (((double)(clock() - z)) / CLOCKS_PER_SEC) << endl;
+    while(t--){
+        solve();
+    }
 }
